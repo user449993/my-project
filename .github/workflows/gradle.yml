@@ -13,7 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -27,7 +27,8 @@ jobs:
 
     - name: Build and Push Docker Image
     - uses: mr-smithers-excellent/docker-build-push@v5
-      name: Build & push Docker image
+    
+    - name: Build & push Docker image
       with:
         image: sasnimrod/demo-app
         tags: v1, latest
