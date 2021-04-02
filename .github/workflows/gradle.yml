@@ -24,11 +24,11 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: List Directories
+      run: ls -lR
 
-    - name: Build and Push Docker Image
-    - uses: mr-smithers-excellent/docker-build-push@v5
-    
     - name: Build & push Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: sasnimrod/demo-app
         tags: v1, latest
